@@ -13,6 +13,13 @@
 		background-image: url(img/bg.png);
 		background-size:100% 100%;
 	}
+	#box2{
+		position: absolute;
+		top: 50px;
+		left: 695px;
+		width: 530px;
+		height: 724px;
+	}
 	#chessBlack{
 		width: 100px;
 		height: 100px;
@@ -33,15 +40,78 @@
 		height: 100px;
 		padding-left: 2px;
 	}
+	.boom{
+		width: 100px;
+		height: 100px;
+		padding-left: 2px;
+	}
 	#cursor{
 		position: absolute;
-		top: 160px;
-		left: 460px;
+		top: -35px;
+		left: 680px;
+	}
+	#p1{
+		position: absolute;
+		top: 100px;
+		right: 300px;
+	}
+	#p2{
+		position: absolute;
+		top: 724px;
+		right: 300px;
+	}
+	b{
+		position: absolute;
+		top:100px;
+		left: 100px;
+	}
+	i{
+		position: absolute;
+		top: 200px;
+		left: 50px;
 	}
 </style>
 </head>
 <body>
+	<!---->
 	<div id="box">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+	</div>
+	<div id="box2">
 		<img src="" alt="">
 		<img src="" alt="">
 		<img src="" alt="">
@@ -81,6 +151,24 @@
 	<div id="cursor">
 		<i class="fa fa-hand-o-up fa-2x"></i>
 	</div>
+		<p id="p1">补给：0</p>
+		<p id="p2">补给：0</p>
+		<b id="b">白色的回合</b>
+	<i>
+方向键 移动光标<br>
+WASD 移动光标下的己方人形<br>
+Enter 结束回合<br>
+Esc 直接退出游戏<br>
+1/2/3/4：在己方总部部署士兵/骑士/皇后/炸弹<br>
+胜利条件：令非炸弹人形抵达敌方指挥部(HQ)，或消灭对手的所有单位<br>
+操作-部署：可消耗资源，将指定单位部署于己方的指挥部。要求指挥部上没有单位<br>
+操作-移动：将一个己方单位移动至相邻的格子，双方单位相遇时会发生战斗<br>
+单位能力：<br>
+  士兵：战斗力1，部署消耗1，可搜集补给<br>
+  骑士：战斗力2，部署消耗1<br>
+  女王：战斗力3，部署消耗2<br>
+  炸弹：战斗力X，战斗时与任意敌人同归于尽<br>
+</i>
 	<script src="index.js"></script>
 </body>
 </html>
