@@ -39,7 +39,7 @@ var cursor = document.getElementById('cursor');
 var score = document.getElementsByTagName("p");
 var tip = document.getElementById("b");
 console.log(tip.innerText);
-console.log(score)
+console.log(score);
 var cLeft = 680;
 var cTop = -35;
 var x = 104;
@@ -199,7 +199,7 @@ function move(i,n){
 				//是敌人的时候
 				if(isChess(i+n) && isEnemy(i,i+n)){
 					var battle = fight(i,i+n);
-					//console.log(battle);
+					console.log(battle);
 					if(battle==1){
 						//console.log(img[i].src);
 						img[i].src=blank;
@@ -213,8 +213,11 @@ function move(i,n){
 						if(isSupply(i+n)){
 							addSupply();
 						}
-					}else if(battle==-1)
+					}else if(battle==-1){
 						img[i].src=blank;
+						img[i].className='blank';
+						img[i].id = 'blank';
+					}
 					else if(battle==0)
 						{
 							img[i].src=blank;
@@ -260,7 +263,9 @@ function isEnd(){
 	}
 	var white = document.getElementById("chessWhite");
 	var black = document.getElementById("chessBlack");
-	if(white==null && black.length!=null){
+	console.log(white);
+	console.log(black);
+	if(white==null && black!=null){
 		alert('黑色胜利！');
 	}else if(black==null && white!=null){
 		alert('白色胜利！');
@@ -334,7 +339,7 @@ function createChess(i){
 		}else if(i==0 && supplyBlack>=1 && isHQEmpty('Black')){//士兵
 			img[2].src='img/pawn_512px_1169133_easyicon.net.png';img[2].className='pawn';img[2].id='chessBlack';
 			useSupply(1,turn);
-		}else{
+		}else if(i==9 && supplyBlack>=1 && isHQEmpty('Black')){
 			//炸弹
 			img[2].src='img/GeliyaA.gif';img[2].className='boom';img[2].id='chessBlack';
 			useSupply(1,turn);
@@ -351,7 +356,7 @@ function createChess(i){
 		}else if(i==0 && supplyWhite>=1 && isHQEmpty('White')){//士兵
 			img[32].src='img/pawn_512px_1125604_easyicon.net.png';img[32].className='pawn';img[32].id='chessWhite';
 			useSupply(1,turn);
-		}else{
+		}else if(i==9 && supplyWhite>=1 && isHQEmpty('White')){
 			//炸弹
 			img[32].src='img/GeliyaA.gif';img[32].className='boom';img[32].id='chessWhite';
 			useSupply(1,turn);
